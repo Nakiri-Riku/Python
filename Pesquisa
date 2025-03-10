@@ -1,0 +1,43 @@
+def media_salario(x):
+  quantia = 0
+  salarios = 0
+  for sal in x:
+    quantia += sal
+    salarios += 1
+  return (quantia/salarios)
+
+def maior_idade(x):
+  return max(x)
+
+def menor_idade(x):
+  return min(x)
+
+
+def quantia_mulheres(x, y, z):
+  quantia = 0
+  for salario, filhos, sexo in zip(x, y, z):
+    if sexo == 'F' and filhos == 3 and salario <= 500:
+      quantia += 1
+  return quantia
+
+
+salario = []
+filhos = []
+idade = []
+sexo = []
+
+for i in range (0, 15, 1):
+
+  sal = float(input(("Insira o valor do salário: ")))
+  salario.append(sal)
+  fil = int(input(("Insira a quantia de filhos: ")))
+  filhos.append(fil)
+  age = int(input("Insira a Idade: "))
+  idade.append(age)
+  sex = input("Insira o Sexo (M Para Masculino e F para Feminino): ").strip().upper()
+  sexo.append(sex)
+
+print("A média de salário é de: ", media_salario(salario))
+print("A maior idade é : ", maior_idade(idade))
+print("A menor idade é : ", menor_idade(idade))
+print("Quantidade de mulheres com três filhos que recebem até R$ 500,00: ", quantia_mulheres(salario, filhos, sexo))

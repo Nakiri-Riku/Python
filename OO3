@@ -1,0 +1,26 @@
+class funcionario:
+  def __init__(self, cadastro, nome, salario):
+    self.cadastro = cadastro
+    self.nome = nome
+    self.salario = salario
+
+  def ganho_anual(self):
+    return (12 * self.salario) + self.salario + (self.salario / 3)
+
+  def desconto_ir(self):
+    if self.salario <= 1500:
+        return 0
+    elif self.salario <= 5000:
+        return 0.15 * self.salario
+    else:
+        return 0.25 * self.salario
+    
+
+cadastro = int(input("Insira o seu cadastro: "))
+nome = input("Insira o seu nome: ")
+salario = float(input("Insira o seu salário:  "))
+
+func = funcionario(cadastro, nome, salario)
+
+print("Ganho Anual de: R$ ", func.ganho_anual())
+print("Desconto IR: ",func.desconto_ir())

@@ -1,0 +1,11 @@
+def divisivel():
+  x = int(input("Insira um numero:"))
+  y = int(input("Insira outro numero:"))
+
+  if x % y == 0:
+      print("O numero é Divisivel")
+    
+  else:
+      print("O numero não é Divisivel")
+
+divisivel()

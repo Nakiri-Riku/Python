@@ -1,0 +1,7 @@
+def esfera():
+  raio = int(input("Insira o raio da esfera:"))
+
+  volume = (4/3) * (raio ** 3)
+  print(f"O volume é de: {volume}")
+
+esfera()

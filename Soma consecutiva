@@ -1,0 +1,11 @@
+def soma():
+  x = int(input("Insira um numero:"))
+   
+  valor = 0
+
+  for i in range(1,x+1,1):
+    valor += i
+
+  print(f"{valor}")
+
+soma()

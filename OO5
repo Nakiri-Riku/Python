@@ -1,0 +1,76 @@
+class Onibus:
+  def __init__(self, passageiros, qtd_max, passagem, qtd_total):
+    self.qtd_max = qtd_max
+    self.passagem = passagem
+    self.qtd_total = qtd_total
+    self.passageiros = passageiros
+
+  def entrar(self, qtd):
+
+    if self.passageiros + qtd > self.qtd_max:
+      print("Quantia Inválida!")
+    else:
+      self.qtd_total += qtd
+      self.passageiros += qtd
+
+
+  def sair(self, qtd):
+
+    if qtd > self.passageiros:
+      print("Quantia Inválida!")
+    else:
+      self.passageiros -= qtd
+
+  def faturamento(self):
+    return (self.passagem * self.qtd_total)
+
+  def set_preco_passagem(self, pre):
+    self.passagem = pre
+
+  def qtd_passageiros(self):
+    return self.passageiros
+
+
+def menu():
+
+  passageiros = 0
+  qtd_total = 0
+  qtd_max = int(input("Insiraa quantia máxima de passageiros: "))
+  passagem = float(input("Insira o preço da passagem: "))
+  onibus = onibus(passageiros, qtd_max, passagem, qtd_total)
+  while True:
+
+    print("Escolha uma opção:")
+    print("1 - Entrar no Ônibus")
+    print("2 - Sair do Ônibus")
+    print("3 - Mostrar a quantia de passageiros")
+    print("4 - Mostrar o faturamento")
+    print("5 - Mudar o preço da passagem")
+    print("6 - Sair")
+    opcao = input("Sua Opção: ")
+
+    if opcao == '1':
+      qtd = int(input("Insira a quantia de pessoas que irão entrar: "))
+      onibus.entrar(qtd)
+
+    elif opcao == '2':
+      qtd = int(input("Insira a quantia de pessoas que irão sair: "))
+      onibus.sair(qtd)
+
+    elif opcao == '3':
+      print("Passageiros dentro do ônibus:", onibus.qtd_passageiros())
+
+    elif opcao == '4':
+      print("Faturamento: ",onibus.faturamento())
+
+    elif opcao == '5':
+      pre = float(input("Insira o novo preço da passagem: "))
+      onibus.set_preco_passagem(pre)
+
+    elif opcao == '6':
+      break
+
+    else:
+      print("Opção invalida")
+
+menu()

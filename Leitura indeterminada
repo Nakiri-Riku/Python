@@ -1,0 +1,19 @@
+def Leitura():
+  print("Insira valores continuos, e digite 'SAIR' para terminar")
+  qtd = 0
+  media = 0.0
+  soma = 0
+
+  while True:
+    valor = input("Digite um valor:")
+             
+    if valor == 'SAIR':
+      break
+    
+    qtd += 1
+    soma += float(valor)
+      
+  media = float(soma) / qtd
+  print(f"Média aritmétrica: {media}")
+
+Leitura()

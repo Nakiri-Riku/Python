@@ -1,0 +1,17 @@
+def tipo(x,y,z):
+  if x <= y + z and z <= y + x and y <= x + z:
+    if x == y == z:
+      print("É um triangulo equilátero!")
+    elif x == y or x == z or y == z:
+      print("É um triangulo isósceles!")
+    else:
+      print("É um triangulo escaleno!")
+  else:
+    print("Não é um triangulo!")
+
+a = float(input("Insira a medida do primeiro lado do triangulo:"))
+b = float(input("Insira a medida do segundo lado do triangulo:"))
+c = float(input("Insira a medida do terceiro lado do triangulo:"))
+
+tipo(a,b,c)
+

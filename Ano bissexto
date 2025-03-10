@@ -1,0 +1,31 @@
+def bissexto(x):
+  if (x % 4 == 0 and x % 100 != 0) or (x % 400 == 0):
+    print("É Bissexto!")
+  else:
+    print("Não é Bissexto!")
+  
+def bissextos():
+  bis = 0
+  for i in range(1, 2011, 1):
+    if (i % 4 == 0 and i % 100 != 0) or (i % 400 == 0):
+      bis += 1
+  print(f"A quantia de anos Bissextos entre 1 e 2010 são de: {bis}")
+
+def menu():
+  print("Opçoes:")
+  print("1 - Diz se um ano especifico é Bissexto")
+  print("2 - Diz todos os anos bissextos entre 1 e 2010")
+  opcao = int(input("Escolha a sua opção: "))
+
+  if opcao == 1:
+    ano = int(input("Digite o ano que deseja saber: "))
+    bissexto(ano)
+
+
+  elif opcao == 2:
+    bissextos()
+
+  else:
+    print("Opção inválida! Fechando o programa.")
+
+menu()

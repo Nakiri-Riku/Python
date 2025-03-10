@@ -1,0 +1,51 @@
+def media_salario(x):
+  quantia = 0
+  salarios = 0
+  for sal in x:
+    quantia += sal
+    salarios += 1
+  return (quantia/salarios)
+
+def media_filhos(x):
+  quantia = 0
+  for fil in x:
+    quantia += fil
+  return quantia
+
+
+def maior_salario(x):
+  maior = 0
+  for sal in x:
+    if sal > maior:
+      maior = sal
+  return maior
+
+def percentual_salario(x):
+  quantia = 0
+  salarios = 0
+  salarios_baixos = 0
+  for sal in x:
+    salarios += 1
+    if sal < 380.00:
+      salarios_baixos += 1
+  return  (salarios_baixos/salarios * 100)
+
+def menu():
+  salario = []
+  filhos = []
+  while True:
+
+    sal = float(input(("Insira o valor do salário: ")))
+    salario.append(sal)
+    fil = int(input(("Insira a quantia de filhos: ")))
+    filhos.append(fil)
+    fechar = input("Deseja terminar a lista? Se sim, digite 'S' ou qualquer coisa para não :")
+    if fechar == 'S':
+      break
+
+  print("A média de salário é de: ", media_salario(salario))
+  print("A média de filhos é de: ", media_filhos(filhos))
+  print("O maior salário é de: ", maior_salario(salario))
+  print("A média percentual de salários inferiores à R$380,00 é de: ", percentual_salario(salario))
+
+menu()

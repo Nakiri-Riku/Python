@@ -1,0 +1,49 @@
+class aluno_academia:
+  def __init__(self, peso, altura):
+    self.peso = peso
+    self.altura = altura
+
+  def imc(self):
+    return self.peso / (self.altura ** 2)
+
+  def peso_minimo(self):
+    return 18.5 * (self.altura ** 2)
+
+  def peso_maximo(self):
+    return 24.9 * (self.altura ** 2)
+
+  def peso_medio(self):
+    return (self.peso_minimo() + self.peso_maximo()) / 2
+
+def menu():
+  while True:
+    print("1 - Calcular IMC")
+    print("2 - Peso Mínimo")
+    print("3 - Peso Máximo")
+    print("4 - Peso Médio")
+    print("5 - Sair")
+    opcao = input("Insira sua opcão: ")
+    peso = float(input("Insira o Peso: "))
+    altura = float(input("Insira a Altura: "))
+
+    aluno = aluno_academia(peso, altura)
+
+    if opcao == '1':
+      print(f"O IMC é : ", aluno.imc())
+
+    elif opcao == '2':
+      print("O peso mínimo é de: ", aluno.peso_minimo())
+
+    elif opcao == '3':
+      print("O peso máximo é de: ", aluno.peso_maximo())
+
+    elif opcao == '4':
+      print("O peso médio é de: ", aluno.peso_medio())
+
+    elif opcao == '5':
+      break
+
+    else:
+      print("Opção Inválida!")
+
+menu()

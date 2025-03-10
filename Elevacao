@@ -1,0 +1,10 @@
+def calc():
+  x = float(input("Digite um número:"))
+  a = int(input("Digite um número inteiro para ser a potência do anterior:"))
+  valor = x
+
+  for i in range(a, 1, -1):
+    valor = valor * x
+  print(f"O valor do número {x} elevado à potência {a} é de {valor}")
+
+calc()

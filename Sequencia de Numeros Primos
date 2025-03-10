@@ -1,0 +1,8 @@
+16) Crie uma função que gere e mostre os dez primeiros números primos acima de
+100.
+
+def primo():
+  vetor = []
+  primos = 0
+  while primos < 10:
+    

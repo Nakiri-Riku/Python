@@ -1,0 +1,53 @@
+class Numero:
+  def __init__(self, numero):
+    self.numero = numero
+
+  def fatorial(self):
+    num = int(self.numero)
+    fatorial = 1
+    for i in range(1, num +1):
+      fatorial *= i
+    return fatorial
+
+  def potencia(self, x):
+    return self.numero ** x
+  
+  def parte_inteira(self):
+    return int(self.numero)
+  
+  def parte_decimal(self):
+    return self.numero - int(self.numero)
+
+
+def menu():
+  while True:
+    print("1 - Fatorial")
+    print("2 - Potência")
+    print("3 - Parte Inteira")
+    print("4 - Parte Decimal")
+    print("5 - Sair")
+    opcao = input("Insira sua opcão: ")
+    numero = float(input("Insira o número que deseja realizar a operação: "))
+
+    num = Numero(numero)
+
+    if opcao == '1':
+      print(f"O fatorial de {numero} é: ", num.fatorial())
+
+    elif opcao == '2':
+      x = int(input("Insira o número que deseja como potência: "))
+      print("Número final: ", num.potencia(x))
+
+    elif opcao == '3':
+      print("Parte Inteira: ", num.parte_inteira())
+
+    elif opcao == '4':
+      print("Parte Decimal: ", num.parte_decimal())
+
+    elif opcao == '5':
+      break
+
+    else:
+      print("Opção Inválida!")
+
+menu()

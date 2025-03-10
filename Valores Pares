@@ -1,0 +1,13 @@
+def contador(x):
+  pares = 0
+  for numero in x:
+    if numero % 2 == 0:
+      pares += 1
+  return pares
+
+vetor = []
+for i in range (0, 15, 1):
+  numero = float(input(f"Digite o número {i + 1} da sequência:"))
+  vetor.append(numero)
+
+print("Quantia de números pares: ", contador(vetor))

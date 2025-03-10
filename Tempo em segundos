@@ -1,0 +1,9 @@
+def tempo():
+  horas = int(input("Insira as horas:"))
+  minutos = int(input("Insira os minutos:"))
+  segundos = int(input("Insira os segundos:"))
+
+  segundos += (horas * 60 * 60) + (minutos * 60)
+  print(f"{segundos} Segundos")
+
+tempo()

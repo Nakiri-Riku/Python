@@ -1,0 +1,49 @@
+def definir_mes(numero):
+    meses = {
+        1: "Janeiro", 2: "Fevereiro", 3: "Março", 4: "Abril",
+        5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto",
+        9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"
+    }
+    return meses.get(numero, "Mês inválido")
+
+def maior(x, y):
+    maior_temp = x[0]
+    mes_maior = y[0]
+
+    for temp, month in zip(x, y):
+        if temp > maior_temp:
+            maior_temp = temp
+            mes_maior = month
+
+    print(f"A maior temperatura foi de {maior_temp} graus Celsius.")
+    print(f"O mês foi {definir_mes(mes_maior)}.")
+
+def menor(x, y):
+    menor_temp = x[0]
+    mes_menor = y[0]
+
+    for temp, month in zip(x, y):
+        if temp < menor_temp:
+            menor_temp = temp
+            mes_menor = month
+
+    print(f"A menor temperatura foi de {menor_temp} graus Celsius.")
+    print(f"O mês foi {definir_mes(mes_menor)}.")
+
+def menu():
+    temperatura = []
+    mes = []
+
+    while True:
+        temp = float(input("Insira a temperatura registrada: "))
+        temperatura.append(temp)
+        month = int(input("Insira o número do mês correspondente (1 a 12): "))
+        mes.append(month)
+        fechar = input("Deseja terminar a lista? Se sim, digite 'S'. Para continuar, pressione qualquer tecla: ").strip().upper()
+        if fechar == 'S':
+            break
+
+    maior(temperatura, mes)
+    menor(temperatura, mes)
+
+menu()

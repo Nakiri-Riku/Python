@@ -1,0 +1,10 @@
+def delta():
+  a = int(input("Insira um numero:"))
+  b = int(input("Insira outro numero:"))
+  c = int(input("Insira outro numero:"))
+
+  delta = (b ** 2) - (4 * a * c)
+  print(f"Delta = {delta}")
+    
+
+delta()

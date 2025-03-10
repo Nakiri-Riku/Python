@@ -1,0 +1,67 @@
+class produto:
+  def __init__(self, codigo, descricao, prec_custo, prec_venda, margem_lucro):
+    self.codigo = codigo
+    self.descricao = descricao
+    self.prec_custo = prec_custo
+    self.prec_venda = prec_venda
+    self.margem_lucro = margem_lucro
+
+
+  def set_margem_lucro(self, margem):
+    
+    self.margem_lucro = margem
+    self.prec_venda = self.prec_custo * (1 + margem / 100)
+    
+
+  def set_preco_venda(self, lucro):
+
+    self.prec_venda = lucro
+    self.margem_lucro = ((lucro / self.prec_custo) - 1) * 100
+
+  
+  def mostrar(self):
+    print("\n--- Dados do Produto ---")
+    print(self.codigo)
+    print(self.descricao)
+    print(self.prec_custo)
+    print(self.prec_venda)
+    print(self.margem_lucro)
+    
+
+def menu():
+
+  margem_lucro = 0
+  prec_venda = 0
+  codigo = int(input("Insira o codigo do produto: "))
+  descricao = input("Insira a descrição do produto: ")
+  prec_custo = float(input("Insira o preço de custo do produto: "))
+  prod = produto(codigo, descricao, prec_custo, prec_venda, margem_lucro)
+  while True:
+
+    print("Escolha uma opção:")
+    print("1 - Definir a margem de lucro")
+    print("2 - definir o preço de venda")
+    print("3 - Mostrar os dados do produto")
+    print("4 - Sair")
+    opcao = input("Sua Opção: ")
+
+    if opcao == '1':
+      margem = float(input("Qual será a margem de lucro: "))
+      prod.set_margem_lucro(margem)
+      print("Atualizado com sucesso!")
+
+    elif opcao == '2':
+      lucro = float(input("Qual será o preço de venda: "))
+      prod.set_preco_venda(lucro)
+      print("Atualizado com sucesso!")
+
+    elif opcao == '3':
+      prod.mostrar()
+
+    elif opcao == '4':
+      break
+
+    else:
+      print("Opção invalida")
+
+menu()

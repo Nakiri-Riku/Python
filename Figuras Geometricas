@@ -1,0 +1,36 @@
+def menu():
+    while True:
+        print("Escolha uma forma geométrica")
+        print("Opcao 1 = Circulo")
+        print("Opcao 2 = Retangulo")       
+        print("Opcao 3 = Triangulo")
+        print("Opcao 4 = Fechar Programa!")  
+        opcao = input("Opcao Escolhida:")
+
+        if opcao == '1':
+          raio = float(input("Insira o raio do circulo:"))
+          area = 3.14 * raio ** 2
+          print(f"{area}")
+            
+
+        elif opcao == '2':
+          altura = float(input("Insira o altura do retangulo:"))
+          base = float(input("Insira o base do retangulo:"))
+          area = altura * base
+          print(f"{area}")
+
+        elif opcao == '3':
+          altura = float(input("Insira o altura do triangulo:"))
+          base = float(input("Insira o base do triangulo:"))
+          area = (altura * base) / 2
+          print(f"{area}")
+
+        elif opcao == '4':
+            print("Obrigado por usar o programa!")
+            break
+
+        else:
+            print("Opcao Invalida!")
+            break
+
+menu()

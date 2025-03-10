@@ -1,0 +1,79 @@
+class funcionario:
+  def __init__(self, cadastro, nome, salario, ativo):
+    self.cadastro = cadastro
+    self.nome = nome
+    self.salario = salario
+    self.ativo = ativo
+
+  def aumento(self, x):
+    self.salario *= x
+
+  def estado(self, texto3):
+    if texto3 == 'd':
+      self.ativo = False
+    elif texto3 == 'e':
+      self.ativo = True
+    else:
+      print("Opção Inválida!")
+
+
+  def dados(self):
+    print("\n--- Dados do Funcionário ---")
+    print(self.cadastro)
+    print(self.nome)
+    print(self.salario)
+    if self.ativo == True:
+      print("Funcionário ativo")
+    else:
+      print("Funcionário inativo")
+    print("\n----------------------------")
+
+
+ativo = False
+cadastro = int(input("Insira o seu cadastro: "))
+nome = input("Insira o seu nome: ")
+salario = float(input("Insira o seu salário:  "))
+texto1 = input("O Tabalhador está ativo? (Responda com sim ou não): ").strip().lower()
+
+if texto1 == 'sim':
+  ativo = True
+elif texto1 == 'não':
+  ativo = False
+elif texto1 == 'nao':
+  ativo = False
+else:
+  print("Opção invalida!")
+
+func = funcionario(cadastro, nome, salario, ativo)
+
+def menu():
+  while True:
+    print("Escolha sua opção:")
+    print("1 - Aumentar Salário")
+    print("2 - Empregar / Demitir")
+    print("3 - Ver dados")
+    print("4 - Sair")
+    texto2 = input("Digite sua opção: ")
+
+    if texto2 == '1':
+      x = int(input("Digite a porcentagem do aumento: "))
+      func.aumento(x)
+      print("Aumento realizado com sucesso!")
+
+
+    elif texto2 == '2':  
+      texto3 = input("Digite 'D' para demitir e 'E' para empregar").strip().lower()
+      func.estado(texto3)
+
+
+    elif texto2 == '3':
+      func.dados()
+
+
+    elif texto2 == '4':    
+      break
+
+    else:
+      print("Opção Invalida!")
+
+menu()

@@ -1,0 +1,18 @@
+16) Crie uma função que gere e mostre os dez primeiros números primos acima de
+100.
+
+def primo():
+  
+
+
+
+def primos():
+    primos = []
+    numero = 101
+    while len(primos) < 10:
+        if eh_primo(numero):
+            primos.append(numero)
+        numero += 1
+    return primos
+
+print(f"{primos}"())

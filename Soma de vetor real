@@ -1,0 +1,12 @@
+def soma(x):
+  resultado = 0
+  for numero in x:
+    resultado = resultado + numero
+  return resultado
+
+vetor = []
+for i in range(0,20,1):
+  numero = float(input(f"Insira o falor número {i+1} da sequência: "))
+  vetor.append(numero)
+
+print("A soma de todos os elementos da sequência é: ", soma(vetor))

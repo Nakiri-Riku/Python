@@ -1,0 +1,14 @@
+def fatorial():
+  x = int(input("Digite um valor inteiro e positivo:"))
+  fator = 1
+
+  if x > 0:
+    for i in range(x,1,-1):
+      fator = fator * i
+    print(f"O fatorial de {x} é {fator}")
+    print("Obrigado por usar o programa!")
+
+  else:
+    print("O número não é positivo!")
+
+fatorial()    

@@ -1,0 +1,58 @@
+class Hora:
+  def __init__ (self, hora, minuto, segundo):
+    self.hora = hora
+    self.minuto = minuto
+    self.segundo = segundo
+
+
+  def eh_valida(self):
+    if self.minuto >= 60 or self.segundo >=60:
+      return False
+    else:
+      return True
+
+
+  def imprime(self):
+    print(f"{self.hora}:{self.minuto}:{self.segundo}")
+
+
+  def hora_diferenca (self, outra_hora):
+    self_em_segundos = self.hora * 3600 + self.minuto * 60 + self.segundo
+    outra_em_segundos = outra_hora.hora * 3600 + outra_hora.minuto * 60 + outra_hora.segundo
+
+    diferenca_segundos = abs(self_em_segundos - outra_em_segundos)
+
+    horas = diferenca_segundos // 3600
+    diferenca_segundos %= 3600
+    minutos = diferenca_segundos // 60
+    segundos = diferenca_segundos % 60
+
+    return Hora(horas, minutos, segundos)
+
+
+
+hora = int(input("Insira as Horas: "))
+minuto = int(input("Insira os Minutos: "))
+segundo = int(input("Insira os segundos: "))
+
+horario = Hora(hora, minuto, segundo)
+
+if horario.eh_valida() == True:
+  print("A hora é valida!")
+  horario.imprime()
+  print("Novamente, insira outro horário para ver a diferença entre ambos.")
+  hora = int(input("Insira as Horas: "))
+  minuto = int(input("Insira os Minutos: "))
+  segundo = int(input("Insira os segundos: "))
+  outra_hora = Hora(hora, minuto, segundo)
+
+  if outra_hora.eh_valida:
+    diferenca = horario.hora_diferenca(outra_hora)
+    print("A diferença entre os horários é: ", diferenca.imprime())
+
+  else:
+    print("A outra hora é invalida!")
+
+
+else:
+  print("A hora é invalida!")
